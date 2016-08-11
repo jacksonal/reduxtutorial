@@ -1,5 +1,15 @@
-import {createStore} from 'redux';
-import { addTodo, toggleTodo, setVisibilityFilter, VisibilityFilters } from './actions'
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
 import todoApp from './reducers'
+import App from './components/App'
 
-let store = createStore(todoApp, window.STATE_FROM_SERVER);
+let store = createStore(todoApp)
+
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)
