@@ -9,6 +9,8 @@
   "author": "Alex Jackson",
   "license": "ISC",
   "dependencies": {
+    "babel-preset-react": "^6.11.1",
+    "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-redux": "^4.4.5",
     "webpack": "^1.13.1"
@@ -23,6 +25,7 @@
   "babel": {
     "presets": [
       "es2015",
+      "react",
       "stage-0"
     ]
   }

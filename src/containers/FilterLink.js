@@ -21,4 +21,4 @@ const FilterLink = connect(
 	mapDispatchToProps
 )(Link)
 
-esport default FilterLink;
+export default FilterLink;

@@ -1,6 +1,6 @@
 const todo = (state={}, action) => {
 	switch (action.type) {
-		case  'ADD_TODO':
+		case 'ADD_TODO':
 			return {
 				id: action.id,
 				text: action.text,
@@ -20,23 +20,15 @@ const todo = (state={}, action) => {
 
 const todos = (state = [], action) => {
 	switch(action.type){
-		case ADD_TODO:
+		case 'ADD_TODO':
 			return [
 					...state,
-					{
-						text: action.text,
-						completed: false
-					}
-				];
-		case TOGGLE_TODO:
-			return state.map((todo, index) => {
-					if(index === action.index) {
-						return Object.assign({}, todo, {
-							completed: !todo.completed
-						})
-					}
-					return todo;
-				});
+					todo(undefined, action)
+			];
+		case 'TOGGLE_TODO':
+			return state.map(t=>
+				todo(t,action)
+			);
 		default:
 			return state;
 	}

@@ -1,5 +1,9 @@
 var path = require('path');
 var SRC = path.join(__dirname,'src/');
+var ACTIONS = path.join(SRC,'actions/');
+var REDUCERS = path.join(SRC, 'reducers/');
+var COMPONENTS = path.join(SRC, 'components/');
+var CONTAINERS = path.join(SRC, 'containers/');
 var NODE_MODULES = path.join(__dirname,'node_modules/');
 var config = {
 	entry:'./src',
@@ -10,7 +14,7 @@ var config = {
   resolve: {
   	root: [SRC,NODE_MODULES],
   	alias: {
-  		'actions': path.join(SRC, 'actions')
+  		'actions': path.join(ACTIONS, 'actions'),
   	}
   },
   module: {
