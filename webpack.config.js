@@ -9,12 +9,12 @@ var config = {
 	entry:'./src',
 	output:{
 		path: './dist',
-		filename: 'basic-redux-tutorial.js'
+		filename: 'advanced-redux-tutorial.js'
 	},
   resolve: {
   	root: [SRC,NODE_MODULES],
   	alias: {
-  		'actions': path.join(ACTIONS, 'actions'),
+  		'actions': path.join(SRC, 'actions'),
   	}
   },
   module: {
