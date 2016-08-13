@@ -16,6 +16,6 @@ const store = createStore(
 )
 
 store.dispatch(selectSubreddit('reactjs'))
-store.dispatch(fetchPosts('reactjs')).then(() =>
+store.dispatch(fetchPostsIfNeeded('reactjs')).then(() =>
   console.log(store.getState())
 )
