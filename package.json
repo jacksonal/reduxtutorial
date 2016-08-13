@@ -4,7 +4,7 @@
   "description": "basic tutorial",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack --display-error-details"
   },
   "author": "Alex Jackson",
   "license": "ISC",
