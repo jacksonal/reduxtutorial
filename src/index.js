@@ -1,21 +1,10 @@
 import 'babel-polyfill'
-import thunkMiddleware from 'redux-thunk'
-import createLogger from 'redux-logger'
-import { createStore, applyMiddleware } from 'redux'
-import { selectSubreddit, fetchPosts } from './actions'
-import rootReducer from './reducers'
 
-const loggerMiddleware = createLogger()
+import React from 'react'
+import { render } from 'react-dom'
+import Root from './containers/Root'
 
-const store = createStore(
-  rootReducer,
-  applyMiddleware(
-    thunkMiddleware, // lets us dispatch() functions
-    loggerMiddleware // neat middleware that logs actions
-  )
-)
-
-store.dispatch(selectSubreddit('reactjs'))
-store.dispatch(fetchPostsIfNeeded('reactjs')).then(() =>
-  console.log(store.getState())
+render(
+  <Root />,
+  document.getElementById('root')
 )

@@ -6,7 +6,7 @@ import {
 	RECEIVE_POSTS
 } from 'actions' //actions.js
 
-function selectedSubreddit(state = 'reactjs', action){
+function selectedSubreddit(state = 'frontend', action){
 	switch (action.type){
 		case SELECT_SUBREDDIT:
 			return action.subreddit;
@@ -48,7 +48,7 @@ function postsBySubreddit(state={},action){
 		case REQUEST_POSTS:
 		case RECEIVE_POSTS:
 			return Object.assign({}, state, {
-				[action.subreddit]: posts(state[action.subreddit])
+				[action.subreddit]: posts(state[action.subreddit], action)
 			});
 		default:
 			return state;
